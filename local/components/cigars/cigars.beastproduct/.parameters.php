@@ -21,5 +21,12 @@ $arComponentParameters = [
             'TYPE' => 'LIST',
             'VALUES' => $arIblock,
         ],
+        'DETAIL_URL' => CIBlockParameters::GetPathTemplateParam(
+            'DETAIL',
+            'DETAIL_URL',
+            GetMessage('DETAIL'),
+            '',
+            'URL_TEMPLATES'
+        ),
     ]
 ];

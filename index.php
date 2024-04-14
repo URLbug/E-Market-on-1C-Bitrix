@@ -292,10 +292,12 @@ $APPLICATION->SetTitle("Интернет-магазин Cigar");
 	".default", 
 	array(
 		"IBLOCK_TYPE_ID" => "2",
-		"COMPONENT_TEMPLATE" => ".default"
+		"COMPONENT_TEMPLATE" => ".default",
+		"DETAIL_URL" => "#ELEMENT_ID#"
 	),
 	false
-);?>
+);
+    ?>
     <!-- special price -->
     <section class="special-price">
         <div class="price-intro">
