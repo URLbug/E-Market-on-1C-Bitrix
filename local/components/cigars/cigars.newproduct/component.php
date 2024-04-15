@@ -11,8 +11,12 @@ CModule::IncludeModule('iblock');
 
 $arResult = [];
 
+$arResult['TITLE'] = $arParams['TITLE'];
+
 $iblocks = CIBlockElement::GetList(
-    [],
+    [
+        'ID' => 'DESC',
+    ],
     [
         'IBLOCK_ID' => $arParams['IBLOCK_TYPE_ID'],
     ]
@@ -33,16 +37,10 @@ while($iblock = $iblocks->fetch())
 
     while($prop = $props->Fetch())
     {
-        if(
-            $prop['ID'] == 11 ||
-            $prop['ID'] == 2 ||
-            $prop['ID'] == 3
-        ) {
-            $iblock['PROPERTY'][$prop['CODE']][] = $prop;
-        }
+        $iblock['PROPERTY'][$prop['CODE']] = $prop;
     }
 
-    if($iblock['PROPERTY']['RATING'][0]['VALUE'] >= 4 && $maxItem <= 4)
+    if($maxItem <= 8)
     {
         $arButtons = CIBlock::GetPanelButtons(
             $iblock["IBLOCK_ID"],

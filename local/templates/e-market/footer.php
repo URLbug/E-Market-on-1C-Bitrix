@@ -91,54 +91,18 @@
                         </form>
                         <small>Eros posse verterem congue saperet.</small>
                     </div>
-                    <div class="col-sm-3">
-                        <h2>Featured Products</h2>
-                        <div class="heading-border b-color-1"></div>
-                        <ul class="media-list">
-                            <li class="media">
-                                <div class="media-left"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/featured-1.jpg" alt=""></div>
-                                <div class="media-body">
-                                    <p class="media-heading">Lorem ipsum dolor sit amet</p>
-                                    <div class="category">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <strong>$899.99</strong>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <div class="media-left"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/featured-1.jpg" alt=""></div>
-                                <div class="media-body">
-                                    <p class="media-heading">Lorem ipsum dolor sit amet</p>
-                                    <div class="category">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <strong>$899.99</strong>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <div class="media-left"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/featured-1.jpg" alt=""></div>
-                                <div class="media-body">
-                                    <p class="media-heading">Lorem ipsum dolor sit amet</p>
-                                    <div class="category">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <strong>$899.99</strong>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    <?$APPLICATION->IncludeComponent(
+	"cigars:cigars.newproduct", 
+	"footer-new", 
+	array(
+		"DETAIL_URL" => "#ELEMENT_ID#",
+		"IBLOCK_TYPE_ID" => "2",
+		"COMPONENT_TEMPLATE" => "footer-new",
+		"TITLE" => "Новые Товары"
+	),
+	false
+);?>
+
                     <div class="col-sm-3">
                         <h2>Latest News</h2>
                         <div class="heading-border b-color-1"></div>
