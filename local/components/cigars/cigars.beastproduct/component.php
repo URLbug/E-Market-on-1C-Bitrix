@@ -11,6 +11,8 @@ CModule::IncludeModule('iblock');
 
 $arResult = [];
 
+$arResult['TITLE'] = $arParams['TITLE'];
+
 $iblocks = CIBlockElement::GetList(
     [],
     [

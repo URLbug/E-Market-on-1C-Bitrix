@@ -7,15 +7,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
  * @var CBitrixComponentTemplate $this
  */
 
-
-//debug($arResult);
+$arResult['TITLE'] = explode(' ', $arResult['TITLE']);
 ?>
 
 <section class="best-selling">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1><span class="t-color-2">Лучший</span> Рейтинг
+                <h1><span class="t-color-2"><?=$arResult['TITLE'][0]?></span>
+                    <?=$arResult['TITLE'][1]?>
                 </h1>
                 <div class="heading-border b-color-2"></div>
             </div>

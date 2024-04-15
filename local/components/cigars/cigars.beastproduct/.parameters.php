@@ -15,6 +15,11 @@ while($iblock = $iblocks->Fetch())
 
 $arComponentParameters = [
     'PARAMETERS' => [
+        'TITLE' => [
+            'PARENT' => 'BASE',
+            'NAME' => GetMessage('TITLE'),
+            'TYPE' => 'STRING',
+        ],
         'IBLOCK_TYPE_ID' => [
             'PARENT' => 'BASE',
             'NAME' => GetMessage('IBLOCK_NAME'),
