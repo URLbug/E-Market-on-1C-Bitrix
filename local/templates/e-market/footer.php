@@ -91,55 +91,22 @@
                         </form>
                         <small>Eros posse verterem congue saperet.</small>
                     </div>
-                    <?$APPLICATION->IncludeComponent(
-	"cigars:cigars.newproduct", 
-	"footer-new", 
-	array(
-		"DETAIL_URL" => "#ELEMENT_ID#",
-		"IBLOCK_TYPE_ID" => "2",
-		"COMPONENT_TEMPLATE" => "footer-new",
-		"TITLE" => "Новые Товары"
-	),
-	false
-);?>
+                    <?
+//                    $APPLICATION->IncludeComponent(
+//	"cigars:cigars.newproduct",
+//	"footer-new",
+//	array(
+//		"DETAIL_URL" => "#ELEMENT_ID#",
+//		"IBLOCK_TYPE_ID" => "2",
+//		"COMPONENT_TEMPLATE" => "footer-new",
+//		"TITLE" => "Новые Товары"
+//	),
+//	false
+//);?>
 
-                    <div class="col-sm-3">
-                        <h2>Latest News</h2>
-                        <div class="heading-border b-color-1"></div>
-                        <ul class="media-list">
-                            <li class="media">
-                                <div class="media-left text-center">
-                                    <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/featured-1.jpg" alt="">
-                                    <span><i class="fa fa-search"></i></span>
-                                </div>
-                                <div class="media-body">
-                                    <p class="f-border">Lorem ipsum dolor sit amet, an animal feugait</p>
-                                    <p class="f-date">23 August 2015</p>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <div class="media-left text-center">
-                                    <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/featured-1.jpg" alt="">
-                                    <span><i class="fa fa-search"></i></span>
-                                </div>
-                                <div class="media-body">
-                                    <p class="f-border">Lorem ipsum dolor sit amet, an animal feugait</p>
-                                    <p class="f-date">23 August 2015</p>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <div class="media-left text-center">
-                                    <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/featured-1.jpg" alt="">
-                                    <span><i class="fa fa-search"></i></span>
-                                </div>
-                                <div class="media-body">
-                                    <p class="f-border">Lorem ipsum dolor sit amet, an animal feugait</p>
-                                    <p class="f-date">23 August 2015</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+
                     <?php
+
                     $APPLICATION->IncludeFile(
                         INCLUDE_PATH . '/html/contact/footer_contact.php',
                         [],

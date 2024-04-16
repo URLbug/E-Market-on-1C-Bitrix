@@ -2,30 +2,31 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("test");
 
-//CModule::IncludeModule('iblock');
-//
-//$products = CIBlockElement::GetList([], ['IBLOCK_ID' => 2], ['ID']);
-//
-//$Celemet = new CIBlockElement();
-//
-//while($product = $products->Fetch())
-//{
-//    try {
-//        $Celemet->Update($product['ID'], [
-//            'PROPERTY_VALUES' =>
-//                [
-//                    2 => ['VALUE' => random_int(1000, 2000),],
-//                    3 => ['VALUE' => 2,],
-//                    11 => ['VALUE' => random_int(0, 5),],
-//                    10 => ['VALUE' => random_int(10, 2500), ],
-//                    9 => ['VALUE' => random_int(10, 30),],
-//                ],
-//        ]);
-//    }
-//    catch(Exception)
-//    {
-//        echo $Celemet->LAST_ERROR;
-//    }
-//}
+\Bitrix\Main\Loader::includeModule('iblock');
+\Bitrix\Main\Loader::includeModule('catalog');
+
+$iblocksId = [2];
+
+$iterator = \Bitrix\Iblock\ElementTable::getList([
+    'select' => ['IBLOCK_ID', 'ID'],
+    'filter' => ['IBLOCK_ID' => $iblocksId, '!PRODUCT.CAN_BUY_ZERO' => 'D', '!PRODUCT.TYPE' => \Bitrix\Catalog\ProductTable::TYPE_SKU],
+    'runtime' => [
+        'PRODUCT' => [
+            'data_type' => '\Bitrix\Catalog\ProductTable',
+            'reference' => ['=this.ID' => 'ref.ID']
+        ]
+    ]
+]);
+
+$elements = [];
+while($row = $iterator->fetch()) {
+    $elements[] = $row;
+}
+
+foreach($elements as $element) {
+    CCatalogProduct::Update($element['ID'], ['CAN_BUY_ZERO' => 'D']);
+}
+
+echo 'Количество = '.count($elements);
 
 ?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
