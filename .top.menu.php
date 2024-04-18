@@ -1,15 +1,29 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Главная",
-		"/",
+		"Главная", 
+		"/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Магазин", 
-		"shop/",
+		"shop/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Корзина", 
+		"/basket.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Поиск", 
+		"/search/", 
 		Array(), 
 		Array(), 
 		"" 

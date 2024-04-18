@@ -54,15 +54,6 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/assets/js/custom.js');
                     ]
                 );
                 ?>
-
-                <div class="col-sm-5">
-                    <ul class="list-inline pull-right">
-                        <li><a href="#" ><i class="fa fa-user"></i> My Account</a></li>
-                        <li><a href="#" ><i class="fa fa-heart-o"></i> Wishlist (0)</a></li>
-                        <li><a href="#" ><i class="fa fa-file-o"></i> Compare (0)</a></li>
-                        <li><a class="register" href="#" >Register</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -116,13 +107,17 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/assets/js/custom.js');
 	),
 	false
 );?>
-
-                            <form class="navbar-form navbar-right" role="search">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="nav-search"><a href="#"><i class="fa fa-search"></i></a></span>
-                                </div>
-                            </form>
+                            <?$APPLICATION->IncludeComponent(
+	"bitrix:search.form", 
+	"e-market-search", 
+	array(
+		"PAGE" => "/search/",
+		"USE_SUGGEST" => "N",
+		"COMPONENT_TEMPLATE" => "e-market-search"
+	),
+	false
+);?>
+                            
                         </div>
                     </div>
                 </nav>
